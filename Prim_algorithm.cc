@@ -92,7 +92,7 @@ int main() {
     graph.addEdge(3, 4, 2);
     graph.addEdge(4, 5, 6);
 
-    // Find and print the Minimum Spanning Tree
+    // Find and print the Minimum Spanning Tree.
     graph.primMST();
 
     return 0;
