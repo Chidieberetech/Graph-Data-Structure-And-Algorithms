@@ -45,7 +45,7 @@ def prim(graph):
     return minimum_spanning_tree
 
 
-# Create a graph
+# Minimum Spanning Tree of a graph.
 graph = Graph()
 graph.add_edge('K10', 'K20', 4)
 graph.add_edge('K10', 'K30', 8)
