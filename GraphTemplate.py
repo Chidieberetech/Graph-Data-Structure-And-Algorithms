@@ -108,7 +108,7 @@ class GraphTemplate(object):
             queue.remove(min_node)
             return min_node
 
-    # Printing the Graph
+    # Printing the Graph.
     print("Implementing sorting the min-priority Queue")
     # Creating node templates
     VertexK20 = NodeTemplate("Vertex K20", 5)
