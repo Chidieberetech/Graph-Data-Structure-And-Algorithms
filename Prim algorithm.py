@@ -25,42 +25,42 @@ def prim(graph):
     visited = {start_vertex}
 
     # Create a heap to store the edges and their weights
-    edges = [(nodes_weight, start_vertex, neighbor) for neighbor, nodes_weight in graph[start_vertex]]
+    edges = [(edges_weight, start_vertex, neighbor) for neighbor, edges_weight in graph[start_vertex]]
     heapq.heapify(edges)
 
     while edges:
-        # Pop the edge with the minimum nodes_weight
-        nodes_weight, Vertex_u, Vertex_v = heapq.heappop(edges)
+        # Pop the edge with the minimum weight
+        edges_weight, Vertex_u, Vertex_v = heapq.heappop(edges)
 
         if Vertex_v not in visited:
             # Add the edge to the minimum spanning tree
-            minimum_spanning_tree.append((Vertex_u, Vertex_v, nodes_weight))
+            minimum_spanning_tree.append((Vertex_u, Vertex_v, edges_weight))
             visited.add(Vertex_v)
 
             # Add the adjacent edges of Vertex_v to the heap
-            for neighbor, nodes_weight in graph[Vertex_v]:
+            for neighbor, edges_weight in graph[Vertex_v]:
                 if neighbor not in visited:
-                    heapq.heappush(edges, (nodes_weight, Vertex_v, neighbor))
+                    heapq.heappush(edges, (edges_weight, Vertex_v, neighbor))
 
     return minimum_spanning_tree
 
 
 # Create a graph
 graph = Graph()
-graph.add_edge('A', 'B', 4)
-graph.add_edge('A', 'C', 8)
-graph.add_edge('B', 'C', 2)
-graph.add_edge('B', 'D', 5)
-graph.add_edge('C', 'D', 1)
-graph.add_edge('C', 'E', 6)
-graph.add_edge('D', 'E', 3)
-graph.add_edge('D', 'F', 4)
-graph.add_edge('E', 'F', 2)
+graph.add_edge('K10', 'K20', 4)
+graph.add_edge('K10', 'K30', 8)
+graph.add_edge('K20', 'K30', 2)
+graph.add_edge('K20', 'K40', 5)
+graph.add_edge('K30', 'K40', 1)
+graph.add_edge('K30', 'K50', 6)
+graph.add_edge('K40', 'K50', 3)
+graph.add_edge('K40', 'K60', 4)
+graph.add_edge('K50', 'K60', 2)
 
-# Compute the MST using Prim's algorithm
+# The Minimum Spanning Tree using Prim's algorithm
 minimum_spanning_tree = prim(graph.graph)
 
-# Print the minimum spanning tree
+# Print Minimum Spanning Tree using Prim's algorithm
 for edge in minimum_spanning_tree:
-    u, v, weight = edge
-    print(f"{u} -- {v}: {weight}")
+    Vertex_u, Vertex_v, weight = edge
+    print(f"{Vertex_u} -- {Vertex_v}: {weight}")
