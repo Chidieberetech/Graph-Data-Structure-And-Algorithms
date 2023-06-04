@@ -134,8 +134,7 @@ class GraphTemplate(object):
     else:
         print("Priority queue is empty")
 
-    # TODO: implement Dijkstra (in another class)
-
+    #Implement Dijkstra (in another class)
 
 import heapq
 
