@@ -111,9 +111,9 @@ class GraphTemplate(object):
     # Printing the Graph.
     print("Implementing sorting the min-value Queue")
     # Creating node templates
-    VertexK20 = NodeTemplate("Vertex K20", 5)
-    VertexK30 = NodeTemplate("Vertex K30", 3)
-    VertexK40 = NodeTemplate("Vertex K40", 7)
+    VertexK20 = NodeTemplate("Bellman_Ford K20", 5)
+    VertexK30 = NodeTemplate("Bellman_Ford K30", 3)
+    VertexK40 = NodeTemplate("Bellman_Ford K40", 7)
 
     # Creating a value queue
     priority_queue = [VertexK20, VertexK30, VertexK40]

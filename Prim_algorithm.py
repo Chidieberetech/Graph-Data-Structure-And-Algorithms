@@ -26,7 +26,7 @@ def prim(graph):
     minimum_spanning_tree = []
     visited = {start_vertex}
 
-    # A heap to store the edges and their respective weights
+    # A heap to store the arcs and their respective weights
     edges = [(edges_weight, start_vertex, neighbor) for neighbor, edges_weight in graph[start_vertex]]
     heapq.heapify(edges)
 
@@ -39,7 +39,7 @@ def prim(graph):
             minimum_spanning_tree.append((Vertex_u, Vertex_v, edges_weight))
             visited.add(Vertex_v)
 
-            # Including the adjacent edges of Vertex_v to the heap
+            # Including the adjacent arcs of Vertex_v to the heap
             for neighbor, edges_weight in graph[Vertex_v]:
                 if neighbor not in visited:
                     heapq.heappush(edges, (edges_weight, Vertex_v, neighbor))
