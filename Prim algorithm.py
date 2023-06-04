@@ -1,12 +1,9 @@
-import self as self
-
-
 class Graph:
     def __init__(self):
         self.graph = {}
 
     # Undirected weighted graph using an adjacency list.
-    def add_edge(self, Vertex_u, Vertex_v, nodes_weight):
+    def add_edge(self,Vertex_u, Vertex_v, nodes_weight):
         if Vertex_u not in self.graph:
             self.graph[Vertex_u] = []
         if Vertex_v not in self.graph:
@@ -87,6 +84,7 @@ class MinHeap:
             return (2 * index) + 1
 
         # A function that return right child index of node.
+
         def right_child(self, index):
             return (2 * index) + 2
 
@@ -141,7 +139,7 @@ class MinHeap:
 
         # Function to change the value of a Key
 
-# Example usage of MaxHeap
+# Example usage of Binary Min Heap
 min_heap = MinHeap()
 min_heap.insert(5, "A")
 min_heap.insert(2, "B")
