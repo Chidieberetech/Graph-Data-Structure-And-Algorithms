@@ -78,7 +78,7 @@ class GraphTemplate(object):
     print(graph.get_vertices())
     print(graph.get_edges())
 
-    # Implement method for sorting the min-priority Queue
+    # Implement method for sorting the min-value Queue
 
     class NodeTemplate:
         def __init__(self, name, priority, properties=None):
@@ -100,7 +100,7 @@ class GraphTemplate(object):
         def sort_priority_queue(queue):
             queue.sort(key=lambda node: node.priority)
 
-        # Implement method for extracting an element from the min-priority Queue
+        # Implement method for extracting an Key from the min-value Queue
         def extract_min_priority(queue):
             if not queue:
                 return None
@@ -109,25 +109,25 @@ class GraphTemplate(object):
             return min_node
 
     # Printing the Graph.
-    print("Implementing sorting the min-priority Queue")
+    print("Implementing sorting the min-value Queue")
     # Creating node templates
     VertexK20 = NodeTemplate("Vertex K20", 5)
     VertexK30 = NodeTemplate("Vertex K30", 3)
     VertexK40 = NodeTemplate("Vertex K40", 7)
 
-    # Creating a priority queue
+    # Creating a value queue
     priority_queue = [VertexK20, VertexK30, VertexK40]
 
-    # Sorting the priority queue
+    # Sorting the value queue
     NodeTemplate.sort_priority_queue(priority_queue)
 
-    # Printing the sorted priority queue
+    # Printing the sorted value queue
     for node in priority_queue:
         print(f"Name: {node.name}, Priority: {node.priority}")
 
-    # Implement method for extracting an element from the min-priority Queue
-    print("Extracting an element from the min-priority Queue")
-    # Extracting an element from the min-priority Queue
+    # Implement method for extracting an Key from the min-value Queue
+    print("Extracting an Key from the min-value Queue")
+    # Extracting an Key from the min-value Queue
     min_node = NodeTemplate.extract_min_priority(priority_queue)
     if min_node:
         print(f"Name: {min_node.name}, Priority: {min_node.priority}")
