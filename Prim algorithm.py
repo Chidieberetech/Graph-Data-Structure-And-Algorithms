@@ -62,10 +62,10 @@ graph.add_edge('K40', 'K50', 3)
 graph.add_edge('K40', 'K60', 4)
 graph.add_edge('K50', 'K60', 2)
 
-# The Minimum Spanning Tree using Prim's algorithm
+# The Minimum Spanning Tree using Prim algorithm
 minimum_spanning_tree = prim(graph.graph)
 
-# Print Minimum Spanning Tree using Prim's algorithm
+# Print Minimum Spanning Tree using Prim algorithm
 for edge in minimum_spanning_tree:
     Vertex_u, Vertex_v, weight = edge
     print(f"{Vertex_u} -- {Vertex_v}: {weight}")
@@ -140,8 +140,6 @@ class MinHeap:
             return min_key, min_value
 
         # Function to change the value of a Key
-
-
 
 # Example usage of MaxHeap
 min_heap = MinHeap()
