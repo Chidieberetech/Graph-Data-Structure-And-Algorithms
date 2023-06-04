@@ -29,18 +29,20 @@ class Graph:
 # all other nodes using Bellman-Ford algorithm.
 # The function also detects negative weight cycle
 def bellman_ford(graph, source):
-    # Step 1: Initialization
+    # Phase 1: Initialization (distances from source to other vertices/nodes)
     distances = {v: float('inf') for v in graph.vertices}
     distances[source] = 0
 
-    # Step 2: Relaxation
+    # Pase 2: Relaxation of all arcs (A simple shortest
+    # path from the source to any other vertex can have
+    # at-most |V| - 1 edges)
     for _ in range(len(graph.vertices) - 1):
         for vertex in graph.vertices.values():
             for target, weight in vertex.arcs:
                 if distances[vertex.id] + weight < distances[target]:
                     distances[target] = distances[vertex.id] + weight
 
-    # Step 3: Check for negative cycles
+    # Phase 3: Check for negative cycles
     for vertex in graph.vertices.values():
         for target, weight in vertex.arcs:
             if distances[vertex.id] + weight < distances[target]:
