@@ -42,7 +42,9 @@ def bellman_ford(graph, source):
                 if distances[vertex.id] + weight < distances[target]:
                     distances[target] = distances[vertex.id] + weight
 
-    # Phase 3: Check for negative cycles
+    # Phase 3: Check for negative cycles (guarantees shortest
+    # distances if graph doesn't contain
+    # negative weight cycle.)
     for vertex in graph.vertices.values():
         for target, weight in vertex.arcs:
             if distances[vertex.id] + weight < distances[target]:
