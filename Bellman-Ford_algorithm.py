@@ -45,11 +45,11 @@ def bellman_ford(graph, source):
     # Phase 3: Check for negative cycles (guarantees shortest
     # distances if graph doesn't contain
     # negative weight cycle.)
+
     for vertex in graph.vertices.values():
         for target, weight in vertex.arcs:
             if distances[vertex.id] + weight < distances[target]:
-                raise ValueError("Graph contains negative cycle")
-
+                raise ValueError("The Graph have negative cycle")
     return distances
 
 
