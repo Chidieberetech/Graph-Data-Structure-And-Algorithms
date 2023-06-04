@@ -60,23 +60,23 @@ def bellman_ford(graph, source):
 graph = Graph()
 
 # Add vertices
-graph.add_vertex("A")
-graph.add_vertex("B")
-graph.add_vertex("C")
-graph.add_vertex("D")
-graph.add_vertex("E")
+graph.add_vertex("K10")
+graph.add_vertex("K20")
+graph.add_vertex("K30")
+graph.add_vertex("K40")
+graph.add_vertex("K50")
 
 # Add arcs
-graph.add_edge("A", "B", 4)
-graph.add_edge("A", "C", 2)
-graph.add_edge("B", "C", 1)
-graph.add_edge("B", "D", 5)
-graph.add_edge("C", "D", 8)
-graph.add_edge("C", "E", 10)
-graph.add_edge("D", "E", 2)
+graph.add_edge("K10", "K20", 5)
+graph.add_edge("K10", "K30", 2)
+graph.add_edge("K20", "K30", 1)
+graph.add_edge("K20", "K40", 4)
+graph.add_edge("K30", "K40", 7)
+graph.add_edge("K30", "K50", 9)
+graph.add_edge("K40", "K50", 11)
 
 # Bellman function call
-source_vertex = "A"
+source_vertex = "K10"
 distances = bellman_ford(graph, source_vertex)
 
 print("Shortest distances from vertex", source_vertex)
