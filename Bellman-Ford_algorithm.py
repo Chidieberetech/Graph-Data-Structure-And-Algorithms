@@ -6,9 +6,11 @@ class Bellman_Ford:
     def __init__(self, nodes):
         self.id = nodes  # Numbers of nodes
         self.arcs = []
-# A function that add the edges to the graph
+
+    # A function that add the edges to the graph
     def add_edge(self, target, weight):
         self.arcs.append((target, weight))
+
 
 # A Function provides a basic structure for representing a graph and adding vertices and edges to it
 class Graph:
@@ -24,6 +26,7 @@ class Graph:
     def add_edge(self, source, target, weight):
         if source in self.vertices and target in self.vertices:
             self.vertices[source].add_edge(target, weight)
+
 
 # A function that finds shortest distances from source to
 # all other nodes using Bellman-Ford algorithm.
@@ -53,7 +56,7 @@ def bellman_ford(graph, source):
     return distances
 
 
-# Example usage:
+# Print the distances between them
 graph = Graph()
 
 # Add vertices
@@ -72,6 +75,7 @@ graph.add_edge("C", "D", 8)
 graph.add_edge("C", "E", 10)
 graph.add_edge("D", "E", 2)
 
+# Bellman function call
 source_vertex = "A"
 distances = bellman_ford(graph, source_vertex)
 
