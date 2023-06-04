@@ -128,6 +128,8 @@ class MinHeap:
             if self.size == 0:
                 return None
 
+
+
 # Change the value at the root with the last leaf
             min_key, min_value = self.heap[0]
             self.heap[0] = self.heap[self.size - 1]
@@ -145,7 +147,23 @@ min_heap.insert(5, "A")
 min_heap.insert(2, "B")
 min_heap.insert(8, "C")
 
+
+
 print("Binary Min Heap:")
 while min_heap.size > 0:
     key, value = min_heap.extract_min()
     print(f"Key: {key}, Value: {value}")
+
+from queue import PriorityQueue
+
+# Example usage of PriorityQueue
+priority_queue = PriorityQueue()
+priority_queue.put((5, "A"))
+priority_queue.put((2, "B"))
+priority_queue.put((8, "C"))
+
+print("Priority Queue for Prim.:")
+while not priority_queue.empty():
+    priority, value = priority_queue.get()
+    print(f"Priority: {priority}, Value: {value}")
+
