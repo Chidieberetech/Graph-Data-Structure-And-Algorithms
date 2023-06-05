@@ -1,3 +1,5 @@
+from Prim_algorithm import Graph
+
 def printGraph(graph, highlighted_edges=None):
     # Start the dot graph representation
     dot_graph = "graph {\n"
