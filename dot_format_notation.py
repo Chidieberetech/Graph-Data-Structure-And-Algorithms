@@ -28,7 +28,7 @@ def printGraph(graph, highlighted_edges=None):
     # Iterate over the nodes and their edges
     for node in graph.nodes.values():
         # Include the nodes to the dot graph
-        dot_graph += f"  {node.id};\n"
+        dot_graph += f" For Vertex {node.id};\n"
 
         # Iterate over the edges of the node
         for target, weight in node.edges:
