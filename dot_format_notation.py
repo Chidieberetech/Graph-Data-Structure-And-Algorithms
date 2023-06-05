@@ -63,7 +63,8 @@ graph.add_edge("K20", "K30", 1)
 graph.add_edge("K20", "K40", 5)
 graph.add_edge("K30", "K40", 8)
 
-# Define highlighted edges (e.g., MST or shortest path)
+# Define highlighted edges (Minimum Spanning Tree or a
+# Shortest Path.)
 highlighted_edges = {("K10", "K20"), ("K20", "K30"), ("K30", "K40")}
 
 # Print the graph with highlighted edges
