@@ -23,7 +23,7 @@ class Vertex:
 
 def printGraph(graph, highlighted_edges=None):
     # Start the dot graph representation
-    dot_graph = "graph {\n"
+    dot_graph = "Graph using the dot format notation {\n"
 
     # Iterate over the nodes and their edges
     for node in graph.nodes.values():
