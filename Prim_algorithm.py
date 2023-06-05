@@ -12,6 +12,9 @@ class Graph:
         self.graph[Vertex_u].append((Vertex_v, nodes_weight))
         self.graph[Vertex_v].append((Vertex_u, nodes_weight))
 
+    def add_vertex(self, param):
+        pass
+
 
 # The Prim algorithm for computing the Minimum Spanning Tree of a graph
 

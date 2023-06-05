@@ -1,5 +1,3 @@
-from Prim_algorithm import Graph
-
 def printGraph(graph, highlighted_edges=None):
     # Start the dot graph representation
     dot_graph = "graph {\n"
@@ -10,7 +8,7 @@ def printGraph(graph, highlighted_edges=None):
         dot_graph += f"  {vertex.id};\n"
 
         # Iterate over the edges of the vertex
-        for target, weight in vertex.edges:
+        for target, weight, _ in vertex.edges:
             # Check if the edge is part of the highlighted edges
             if highlighted_edges and (vertex.id, target) in highlighted_edges:
                 # Add the edge with a different color
