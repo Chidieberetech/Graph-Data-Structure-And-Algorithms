@@ -6,14 +6,14 @@ class Graph:
     # Function to add the vertices
     def add_node(self, mark):
         if mark not in self.nodes:
-            self.nodes[mark] = Vertex(mark)
+            self.nodes[mark] = Node(mark)
 
     # Function to add the edges
     def add_edge(self, source, target, weight):
         if source in self.nodes and target in self.nodes:
             self.nodes[source].add_edge(target, weight)
 
-class Vertex:
+class Node:
     def __init__(self, id):
         self.id = id
         self.edges = []
@@ -47,7 +47,7 @@ def printGraph(graph, highlighted_edges=None):
     print(dot_graph)
 
 
-# Example usage:
+
 graph = Graph()
 
 # Add nodes
