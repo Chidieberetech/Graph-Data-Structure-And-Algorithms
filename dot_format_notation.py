@@ -53,8 +53,8 @@ graph = Graph()
 # Add nodes
 graph.add_node("K10")
 graph.add_node("K20")
-graph.add_node("C")
-graph.add_node("D")
+graph.add_node("K30")
+graph.add_node("K40")
 
 # Add edges
 graph.add_edge("K10", "K20", 4)
