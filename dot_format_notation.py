@@ -35,9 +35,9 @@ def printGraph(graph, highlighted_edges=None):
             # Check whether the edge is part of the highlighted edges
             if highlighted_edges and (node.id, target) in highlighted_edges:
                 # Add the edge with a different color
-                dot_graph += f"  {node.id} -- {target} [color=red, label={weight}];\n"
+                dot_graph += f"  {node.id} -- {target} [color=green, label={weight}];\n"
             else:
-                # Add the edge with the default color
+                # Add the edge with the designated color
                 dot_graph += f"  {node.id} -- {target} [label={weight}];\n"
 
     # Close the dot graph representation
