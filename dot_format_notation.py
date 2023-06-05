@@ -14,8 +14,8 @@ class Graph:
             self.nodes[source].add_edge(target, weight)
 
 class Node:
-    def __init__(self, id):
-        self.id = id
+    def __init__(self, mark):
+        self.id = mark
         self.edges = []
 
     def add_edge(self, target, weight):
@@ -63,7 +63,7 @@ graph.add_edge("K20", "K30", 1)
 graph.add_edge("K20", "K40", 5)
 graph.add_edge("K30", "K40", 8)
 
-# Define highlighted edges (Minimum Spanning Tree or a
+# Define highlighted edges (Minimum Spanning Tree or the
 # Shortest Path.)
 highlighted_edges = {("K10", "K20"), ("K20", "K30"), ("K30", "K40")}
 
