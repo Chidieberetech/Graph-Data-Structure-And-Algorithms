@@ -1,3 +1,25 @@
+class Graph:
+    def __init__(self):
+        self.vertices = {}
+
+    def add_vertex(self, id):
+        if id not in self.vertices:
+            self.vertices[id] = Vertex(id)
+
+    def add_edge(self, source, target, weight):
+        if source in self.vertices and target in self.vertices:
+            self.vertices[source].add_edge(target, weight)
+
+
+class Vertex:
+    def __init__(self, id):
+        self.id = id
+        self.edges = []
+
+    def add_edge(self, target, weight):
+        self.edges.append((target, weight))
+
+
 def printGraph(graph, highlighted_edges=None):
     # Start the dot graph representation
     dot_graph = "graph {\n"
@@ -8,7 +30,7 @@ def printGraph(graph, highlighted_edges=None):
         dot_graph += f"  {vertex.id};\n"
 
         # Iterate over the edges of the vertex
-        for target, weight, _ in vertex.edges:
+        for target, weight in vertex.edges:
             # Check if the edge is part of the highlighted edges
             if highlighted_edges and (vertex.id, target) in highlighted_edges:
                 # Add the edge with a different color
@@ -17,7 +39,7 @@ def printGraph(graph, highlighted_edges=None):
                 # Add the edge with the default color
                 dot_graph += f"  {vertex.id} -- {target} [label={weight}];\n"
 
-    # Close the dot graph representation.
+    # Close the dot graph representation
     dot_graph += "}\n"
 
     # Print the dot graph
