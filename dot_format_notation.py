@@ -30,9 +30,9 @@ def printGraph(graph, highlighted_edges=None):
         # Include the nodes to the dot graph
         dot_graph += f"  {node.id};\n"
 
-        # Iterate over the edges of the vertex
+        # Iterate over the edges of the node
         for target, weight in node.edges:
-            # Check if the edge is part of the highlighted edges
+            # Check whether the edge is part of the highlighted edges
             if highlighted_edges and (node.id, target) in highlighted_edges:
                 # Add the edge with a different color
                 dot_graph += f"  {node.id} -- {target} [color=red, label={weight}];\n"
