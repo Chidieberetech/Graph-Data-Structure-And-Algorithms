@@ -51,20 +51,20 @@ def printGraph(graph, highlighted_edges=None):
 graph = Graph()
 
 # Add nodes
-graph.add_node("A")
-graph.add_node("B")
+graph.add_node("K10")
+graph.add_node("K20")
 graph.add_node("C")
 graph.add_node("D")
 
 # Add edges
-graph.add_edge("A", "B", 4)
-graph.add_edge("A", "C", 2)
-graph.add_edge("B", "C", 1)
-graph.add_edge("B", "D", 5)
-graph.add_edge("C", "D", 8)
+graph.add_edge("K10", "K20", 4)
+graph.add_edge("K10", "K30", 2)
+graph.add_edge("K20", "K30", 1)
+graph.add_edge("K20", "D", 5)
+graph.add_edge("K30", "D", 8)
 
 # Define highlighted edges (e.g., MST or shortest path)
-highlighted_edges = {("A", "B"), ("B", "C"), ("C", "D")}
+highlighted_edges = {("K10", "B"), ("B", "K30"), ("K30", "D")}
 
 # Print the graph with highlighted edges
 printGraph(graph, highlighted_edges)
