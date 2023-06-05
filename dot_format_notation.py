@@ -64,7 +64,7 @@ graph.add_edge("K20", "D", 5)
 graph.add_edge("K30", "D", 8)
 
 # Define highlighted edges (e.g., MST or shortest path)
-highlighted_edges = {("K10", "B"), ("B", "K30"), ("K30", "D")}
+highlighted_edges = {("K10", "K20"), ("K20", "K30"), ("K30", "D")}
 
 # Print the graph with highlighted edges
 printGraph(graph, highlighted_edges)
