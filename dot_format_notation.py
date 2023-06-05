@@ -1,49 +1,46 @@
-import pygraphviz as pgv
+def printGraph(graph, highlighted_edges=None):
+    # Start the dot graph representation
+    dot_graph = "graph {\n"
 
-def printGraph(graph, highlight_edges=None):
-    # Create a new PyGraphviz graph
-    dot_graph = pgv.AGraph(directed=graph.is_directed())
+    # Iterate over the vertices and their edges
+    for vertex in graph.vertices.values():
+        # Add the vertex to the dot graph
+        dot_graph += f"  {vertex.id};\n"
 
-    # Add vertices to the graph
-    for vertex in graph.vertices:
-        dot_graph.add_node(vertex)
+        # Iterate over the edges of the vertex
+        for target, weight in vertex.edges:
+            # Check if the edge is part of the highlighted edges
+            if highlighted_edges and (vertex.id, target) in highlighted_edges:
+                # Add the edge with a different color
+                dot_graph += f"  {vertex.id} -- {target} [color=red, label={weight}];\n"
+            else:
+                # Add the edge with the default color
+                dot_graph += f"  {vertex.id} -- {target} [label={weight}];\n"
 
-    # Add edges to the graph
-    for source, edges in graph.edges.items():
-        for target, weight in edges:
-            edge_attrs = {}
-            if highlight_edges is not None and (source, target) in highlight_edges:
-                edge_attrs['color'] = 'red'  # Highlight the edge in red
-            dot_graph.add_edge(source, target, label=str(weight), **edge_attrs)
+    # Close the dot graph representation
+    dot_graph += "}\n"
 
-    # Render the graph to a file or display it
-    dot_graph.draw('graph.png', prog='dot')  # Save the graph as an image file
-    # dot_graph.draw(prog='dot')  # Display the graph
+    # Print the dot graph
+    print(dot_graph)
 
 # Example usage:
-class Graph:
-    def __init__(self, is_directed=False):
-        self.vertices = set()
-        self.edges = {}
-        self.is_directed = is_directed
+graph = Graph()
 
-    def add_vertex(self, vertex):
-        self.vertices.add(vertex)
+# Add vertices
+graph.add_vertex("A")
+graph.add_vertex("B")
+graph.add_vertex("C")
+graph.add_vertex("D")
 
-    def add_edge(self, source, target, weight):
-        if source not in self.edges:
-            self.edges[source] = []
-        self.edges[source].append((target, weight))
+# Add edges
+graph.add_edge("A", "B", 4)
+graph.add_edge("A", "C", 2)
+graph.add_edge("B", "C", 1)
+graph.add_edge("B", "D", 5)
+graph.add_edge("C", "D", 8)
 
-graph = Graph(is_directed=False)
-graph.add_vertex('A')
-graph.add_vertex('B')
-graph.add_vertex('C')
-graph.add_vertex('D')
-graph.add_edge('A', 'B', 3)
-graph.add_edge('B', 'C', 2)
-graph.add_edge('C', 'A', 5)
-graph.add_edge('A', 'D', 4)
+# Define highlighted edges (e.g., MST or shortest path)
+highlighted_edges = {("A", "B"), ("B", "C"), ("C", "D")}
 
-highlight_edges = [('A', 'B'), ('B', 'C')]  # Example highlighting MST or Shortest Path edges
-printGraph(graph, highlight_edges)
+# Print the graph with highlighted edges
+printGraph(graph, highlighted_edges)
