@@ -17,7 +17,7 @@ def printGraph(graph, highlighted_edges=None):
                 # Add the edge with the default color
                 dot_graph += f"  {vertex.id} -- {target} [label={weight}];\n"
 
-    # Close the dot graph representation
+    # Close the dot graph representation.
     dot_graph += "}\n"
 
     # Print the dot graph
